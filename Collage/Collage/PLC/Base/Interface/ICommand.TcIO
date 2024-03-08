@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ICommand" Id="{5865d299-3890-479b-b537-3d73a904f236}">
+    <Declaration><![CDATA[INTERFACE ICommand EXTENDS IResult
+]]></Declaration>
+    <Property Name="Sequence" Id="{c401c39b-619e-4ccd-a272-221360d113f3}">
+      <Declaration><![CDATA[PROPERTY Sequence : DINT]]></Declaration>
+      <Get Name="Get" Id="{1d11e05b-d205-49a8-aa97-171585ecab97}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{5c7670eb-a3b6-4dff-84a1-325c18c4bb85}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="Start" Id="{d2f31887-a413-4334-8bfa-3d772c5968bb}">
+      <Declaration><![CDATA[METHOD Start : ICommand
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

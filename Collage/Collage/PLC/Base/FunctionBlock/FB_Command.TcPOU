@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="FB_Result" Id="{249951de-6bd4-4b91-9e01-c50dc6584630}" SpecialFunc="None">
+  <POU Name="FB_Command" Id="{249951de-6bd4-4b91-9e01-c50dc6584630}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'no_explicit_call' := 'Do not call this FB directly!'}
-FUNCTION_BLOCK FB_Result IMPLEMENTS IResult
+FUNCTION_BLOCK FB_Command IMPLEMENTS ICommand
 VAR
-	_Result : ST_Result;
+	_Result		   : ST_Result;
+	_SequenceState : DINT;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Folder Name="ICommand" Id="{18b292a5-ab55-40fb-9c83-cf12fe1af791}" />
     <Folder Name="IResult" Id="{88dfa4a4-87d0-44c9-b9c4-2683530fc236}" />
     <Property Name="Busy" Id="{eb2116ce-7b80-498b-8fa3-24b72b6b1ab8}" FolderPath="IResult\">
       <Declaration><![CDATA[PROPERTY Busy : BOOL
@@ -90,5 +92,38 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
+    <Property Name="Sequence" Id="{1895c768-df50-4383-9ff7-e5d178fa0e04}" FolderPath="ICommand\">
+      <Declaration><![CDATA[PROPERTY Sequence : DINT]]></Declaration>
+      <Get Name="Get" Id="{24049301-0a87-4e44-8100-e8010248d8c0}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Sequence := _SequenceState;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{dc1400bc-3de2-460c-b3c8-e506839cbdca}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_SequenceState := Sequence;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Start" Id="{24f98774-f64d-425b-bec3-a1db94820221}" FolderPath="ICommand\">
+      <Declaration><![CDATA[METHOD Start : ICommand
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_SequenceState	:= 0;
+_Result.Done	:= FALSE;
+_Result.Busy	:= TRUE;
+_Result.Error	:= FALSE;
+_Result.ErrorId := 0;
+Start			:= This^;]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>

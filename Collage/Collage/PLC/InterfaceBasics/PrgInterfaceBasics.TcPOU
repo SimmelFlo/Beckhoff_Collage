@@ -12,8 +12,9 @@ VAR
 	CylinderSequence : FB_CylinderSequence;
 
 	// Interface Display Example
-	Display		: FB_Display;
-	ProgressBar : FB_ProgressBar;
+	Display		 : FB_Display;
+	ProgressBar	 : FB_ProgressBar;
+	MainSequence : DINT := 0;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Interface Sequence Example
@@ -22,9 +23,20 @@ END_VAR]]></Declaration>
 // Run Sequence with first Cylinder Type
 CylinderSequence.Run(Cylinder := CylinderSpringReturn);
 {ELSE}
+CASE MainSequence OF
+	0:
+		IF CylinderSequence.Run(Cylinder := CylinderDoubleActing).Start().Busy THEN
+			MainSequence := MainSequence + 10;
+		END_IF
 
-// Run Sequence with second Cylinder Type
-CylinderSequence.Run(Cylinder := CylinderDoubleActing);
+	10:
+		IF CylinderSequence.Run(Cylinder := CylinderDoubleActing).Done THEN
+			MainSequence := MainSequence + 10;
+		END_IF
+
+	20: // Next Command
+END_CASE
+
 {END_IF}
 
 // Interface Display Example
