@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="IDisplay" Id="{c20bdbc7-b695-4a99-bf2b-941ddf6b7391}">
+    <Declaration><![CDATA[INTERFACE IDisplay EXTENDS IBase
+]]></Declaration>
+    <Method Name="Show" Id="{127aacfe-754b-4c6f-876f-57be1f081f52}">
+      <Declaration><![CDATA[METHOD Show : BOOL
+VAR_INPUT
+	Message : T_MaxString;
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

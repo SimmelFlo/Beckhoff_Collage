@@ -35,7 +35,7 @@ CASE Sequence OF
 		END_IF
 
 	20: // Retract
-		IF Cylinder.Extend() THEN
+		IF Cylinder.Retract() THEN
 			Sequence := Sequence + 10;
 		END_IF
 

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Display" Id="{0f56468b-8a03-496b-85ad-d04670cb0ef2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Display IMPLEMENTS IDisplay
+VAR
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Show" Id="{5434fd17-59a5-4839-a6dc-4e3706325968}">
+      <Declaration><![CDATA[METHOD Show : BOOL
+VAR_INPUT
+	Message : T_MaxString;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(msgCtrlMask := ADSLOG_MSGTYPE_LOG, msgFmtStr := '%s', strArg := Message);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

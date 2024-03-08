@@ -16,6 +16,8 @@
     <Implicit_KindOfTask>{956aed8a-4523-49d2-9d92-b18d2a6d0c83}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{3330c647-6ffc-4876-aa97-0d184f189187}</Implicit_Jitter_Distribution>
     <LibraryReferences>{48354559-e308-4a12-b129-961375a733d8}</LibraryReferences>
+    <CompilerDefines>MachineA</CompilerDefines>
+    <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Base\Datatype\ST_Result.TcDUT">
@@ -30,16 +32,25 @@
     <Compile Include="Base\Interface\IResult.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InterfaceBasics\FB_CylinderSequence.TcPOU">
+    <Compile Include="InterfaceBasics\DisplayExample\FB_Display.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InterfaceBasics\FB_CylinderSpringReturn.TcPOU">
+    <Compile Include="InterfaceBasics\DisplayExample\FB_ProgressBar.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InterfaceBasics\FB_CylinderDoubleActing.TcPOU">
+    <Compile Include="InterfaceBasics\DisplayExample\IDisplay.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InterfaceBasics\ICylinder.TcIO">
+    <Compile Include="InterfaceBasics\SequenceExample\FB_CylinderDoubleActing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\SequenceExample\FB_CylinderSequence.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\SequenceExample\FB_CylinderSpringReturn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\SequenceExample\ICylinder.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="InterfaceBasics\PrgInterfaceBasics.TcPOU">
@@ -58,6 +69,8 @@
     <Folder Include="Base\FunctionBlock" />
     <Folder Include="Base\Interface" />
     <Folder Include="InterfaceBasics" />
+    <Folder Include="InterfaceBasics\DisplayExample" />
+    <Folder Include="InterfaceBasics\SequenceExample" />
   </ItemGroup>
   <ItemGroup>
     <PlaceholderReference Include="Tc2_Standard">
@@ -81,19 +94,19 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" />
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
