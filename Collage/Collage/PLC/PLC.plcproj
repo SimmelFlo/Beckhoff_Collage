@@ -18,15 +18,46 @@
     <LibraryReferences>{48354559-e308-4a12-b129-961375a733d8}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PlcTask.TcTTO">
+    <Compile Include="Base\Datatype\ST_Result.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="Base\FunctionBlock\FB_Result.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Interface\IBase.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Interface\IResult.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\FB_CylinderSequence.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\FB_CylinderSpringReturn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\FB_CylinderDoubleActing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\ICylinder.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterfaceBasics\PrgInterfaceBasics.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="POUs" />
+    <Folder Include="Base" />
+    <Folder Include="Base\Datatype" />
+    <Folder Include="Base\FunctionBlock" />
+    <Folder Include="Base\Interface" />
+    <Folder Include="InterfaceBasics" />
   </ItemGroup>
   <ItemGroup>
     <PlaceholderReference Include="Tc2_Standard">
@@ -41,6 +72,11 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PLC.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

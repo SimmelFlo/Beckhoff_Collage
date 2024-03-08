@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="IResult" Id="{a0b6e183-7d75-423f-8b8b-e47f2cd3f637}">
+    <Declaration><![CDATA[INTERFACE IResult EXTENDS __SYSTEM.IQueryInterface]]></Declaration>
+    <Property Name="Busy" Id="{1d74b76b-52bc-4cd2-a78f-2434322e2ff5}">
+      <Declaration><![CDATA[PROPERTY Busy : BOOL]]></Declaration>
+      <Get Name="Get" Id="{b49b738e-55f3-43cc-8424-45a3258cd540}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{45aa2dca-9572-432b-a4e7-73b1816695d2}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Done" Id="{9ea9d55d-8822-4de1-a02f-8cc1529a8a98}">
+      <Declaration><![CDATA[PROPERTY Done : BOOL]]></Declaration>
+      <Get Name="Get" Id="{52acd90a-e8ce-4550-a38a-66b5352b02eb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{ad59c078-b0ec-4267-9a84-0deaced04f83}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Error" Id="{9211bef2-0002-407a-b3be-5c87f20f68fd}">
+      <Declaration><![CDATA[PROPERTY Error : BOOL]]></Declaration>
+      <Get Name="Get" Id="{63057b26-7677-4c6e-aa87-4bff642b88bb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{f1b482f2-f993-4452-a09e-405377344913}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="ErrorId" Id="{bef6ddca-305d-4a23-9e8b-1e1712f88a6d}">
+      <Declaration><![CDATA[PROPERTY ErrorId : DINT]]></Declaration>
+      <Get Name="Get" Id="{9903dc13-a3ee-402c-aa91-b8eaeb5f04e2}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{a5cd992e-303a-4d76-8380-98f572defa56}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

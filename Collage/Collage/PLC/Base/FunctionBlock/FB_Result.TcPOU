@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Result" Id="{249951de-6bd4-4b91-9e01-c50dc6584630}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'no_explicit_call' := 'Do not call this FB directly!'}
+FUNCTION_BLOCK FB_Result IMPLEMENTS IResult
+VAR
+	_Result : ST_Result;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="IResult" Id="{88dfa4a4-87d0-44c9-b9c4-2683530fc236}" />
+    <Property Name="Busy" Id="{eb2116ce-7b80-498b-8fa3-24b72b6b1ab8}" FolderPath="IResult\">
+      <Declaration><![CDATA[PROPERTY Busy : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{243d34d5-f54a-4d2b-a429-d629b4ff95c7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Busy := _Result.Busy;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{0b8649e0-f75b-4ff0-9c0c-a676c5419db2}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Result.Busy := Busy;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Done" Id="{145a12f9-563a-4476-9c36-5161e646eb3a}" FolderPath="IResult\">
+      <Declaration><![CDATA[PROPERTY Done : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{6fb4f4c4-5366-49dc-a465-da33934aafb2}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Done := _Result.Done;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{489fe03f-2d29-4b97-9a89-b401cc3e0d1c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Result.Done := Done;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Error" Id="{b861ea8d-2427-4bb9-aa8b-798798dee58c}" FolderPath="IResult\">
+      <Declaration><![CDATA[PROPERTY Error : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{f849cec0-1def-44c7-9730-338fdb0c7099}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Error := _Result.Error;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{1746f02d-844c-48a1-a900-95b47611f1ec}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Result.Error := Error;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="ErrorId" Id="{f732ec30-9827-422a-8e82-63bdacafdc65}" FolderPath="IResult\">
+      <Declaration><![CDATA[PROPERTY ErrorId : DINT
+]]></Declaration>
+      <Get Name="Get" Id="{c0d87b78-9e4f-491b-98c2-2192bb564786}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[ErrorId := _Result.ErrorId;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{64c4a577-3aed-470f-aa78-0d430bea7ac6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Result.ErrorId := ErrorId;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

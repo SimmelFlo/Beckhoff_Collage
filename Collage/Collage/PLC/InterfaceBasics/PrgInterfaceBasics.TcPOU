@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PrgInterfaceBasics" Id="{f7794db9-01e3-42cd-aeb1-1db6f8caa558}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PrgInterfaceBasics
+VAR
+	CylinderSpringReturn : FB_CylinderSpringReturn;
+	CylinderDoubleActing : FB_CylinderDoubleActing;
+	CylinderSequence	 : FB_CylinderSequence;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CylinderSequence.Run(Cylinder := CylinderSpringReturn);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
