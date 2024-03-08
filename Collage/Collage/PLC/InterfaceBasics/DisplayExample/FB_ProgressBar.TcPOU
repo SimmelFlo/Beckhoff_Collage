@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_ProgressBar" Id="{df625a4e-b592-45c2-ac56-b89c7c4ae346}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ProgressBar IMPLEMENTS IBase
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="DisplayProgress" Id="{152f2b88-3c02-48ba-b677-a884e2cc912e}">
+      <Declaration><![CDATA[METHOD DisplayProgress : BOOL
+VAR_INPUT
+	ipDisplay : IDisplay;
+END_VAR
+
+VAR_INST
+	Progress : UINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF ipDisplay = 0 THEN
+	// Return if Display Type is invalid
+	RETURN;
+END_IF
+
+CASE Progress OF
+	0:
+		ipDisplay.Show('0%');
+		Progress := 10;
+
+	10:
+		ipDisplay.Show('10%');
+		Progress := 50;
+
+	50:
+		ipDisplay.Show('50%');
+		Progress := 99;
+
+	99:
+		ipDisplay.Show('99%');
+		Progress := 100;
+
+	100:
+		ipDisplay.Show('100%');
+		Progress := 101;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
