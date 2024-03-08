@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_CylinderDoubleActing" Id="{e79988e4-e59a-4ec8-94ee-4d878cd4b439}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CylinderDoubleActing IMPLEMENTS ICylinder
+VAR
+	SolenoidA AT %Q* : BOOL;
+	SolenoidB AT %Q* : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Extend" Id="{a0cbbcca-d7cf-4269-85d7-937dca0db2d9}">
+      <Declaration><![CDATA[METHOD Extend : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SolenoidA := TRUE;
+SolenoidB := FALSE;
+Extend	  := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Retract" Id="{00a6b42e-fc0f-4b52-af30-c48ce772c915}">
+      <Declaration><![CDATA[METHOD Retract : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SolenoidA := FALSE;
+SolenoidB := TRUE;
+Retract	  := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

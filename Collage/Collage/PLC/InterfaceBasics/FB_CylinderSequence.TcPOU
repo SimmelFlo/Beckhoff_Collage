@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_CylinderSequence" Id="{08533c21-4160-4dd6-8227-436daff5d432}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CylinderSequence
+VAR
+	Sequence : UDINT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Run" Id="{a54341fc-8947-4f65-99f1-36201b8efdda}">
+      <Declaration><![CDATA[METHOD PUBLIC Run : BOOL
+VAR_INPUT
+	Cylinder : ICylinder;
+END_VAR
+VAR_INST
+	WaitTime : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF Cylinder = 0 THEN
+	RETURN;
+END_IF
+
+CASE Sequence OF
+	0: // Extend
+		IF Cylinder.Extend() THEN
+			Sequence := Sequence + 10;
+		END_IF
+
+	10: // Wait 1s
+		WaitTime.IN := TRUE;
+		IF WaitTime.Q THEN
+			WaitTime.IN := FALSE;
+			Sequence	:= Sequence + 10;
+		END_IF
+
+	20: // Retract
+		IF Cylinder.Extend() THEN
+			Sequence := Sequence + 10;
+		END_IF
+
+	30: // Wait 1s
+		WaitTime.IN := TRUE;
+		IF WaitTime.Q THEN
+			WaitTime.IN := FALSE;
+			Sequence	:= Sequence + 10;
+		END_IF
+
+	40: // Done
+		Run := TRUE;
+END_CASE
+
+WaitTime(PT := T#1S);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

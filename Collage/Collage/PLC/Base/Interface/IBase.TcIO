@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="IBase" Id="{694937b0-3980-4bb3-9842-90b0a3f65fbe}">
+    <Declaration><![CDATA[INTERFACE IBase EXTENDS __System.IQueryInterface]]></Declaration>
+  </Itf>
+</TcPlcObject>

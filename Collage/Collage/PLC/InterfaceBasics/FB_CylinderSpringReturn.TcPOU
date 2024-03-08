@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_CylinderSpringReturn" Id="{2e62cab7-a5c3-4da6-9737-990bfeb97ff9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CylinderSpringReturn IMPLEMENTS ICylinder
+VAR
+	Solenoid AT %Q* : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Extend" Id="{42462696-ae31-4f4d-81a4-65ef9e89facd}">
+      <Declaration><![CDATA[METHOD Extend : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Solenoid := TRUE;
+Extend	 := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Retract" Id="{e92501ac-b2b9-4242-be88-4077c9a9f02f}">
+      <Declaration><![CDATA[METHOD Retract : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Solenoid := FALSE;
+Retract	 := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

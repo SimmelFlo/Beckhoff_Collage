@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ICylinder" Id="{35407ab2-5bc7-4a54-b01b-ebe8fe750ff4}">
+    <Declaration><![CDATA[INTERFACE ICylinder EXTENDS IBase
+]]></Declaration>
+    <Method Name="Extend" Id="{434573bc-53df-45e3-90fd-53545f22a45e}">
+      <Declaration><![CDATA[METHOD Extend : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Retract" Id="{a89de3a3-2168-42aa-84d5-523c3d7d7268}">
+      <Declaration><![CDATA[METHOD Retract : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
