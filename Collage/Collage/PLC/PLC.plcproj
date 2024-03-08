@@ -16,17 +16,20 @@
     <Implicit_KindOfTask>{956aed8a-4523-49d2-9d92-b18d2a6d0c83}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{3330c647-6ffc-4876-aa97-0d184f189187}</Implicit_Jitter_Distribution>
     <LibraryReferences>{48354559-e308-4a12-b129-961375a733d8}</LibraryReferences>
-    <CompilerDefines>MachineA</CompilerDefines>
+    <CompilerDefines>MachineB</CompilerDefines>
     <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Base\Datatype\ST_Result.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Base\FunctionBlock\FB_Result.TcPOU">
+    <Compile Include="Base\FunctionBlock\FB_Command.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Base\Interface\IBase.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Interface\ICommand.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Base\Interface\IResult.TcIO">
